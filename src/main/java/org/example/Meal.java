@@ -18,5 +18,12 @@ public class Meal {
     @ManyToOne(fetch = FetchType.LAZY)
     private Hippo hippo;
 
-    // getters and setters
+    Meal(String newType)
+    {
+        type = newType;
+    }
+
+    public Meal() {
+
+    }
 }

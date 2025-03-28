@@ -7,6 +7,7 @@ import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -19,6 +20,10 @@ public class Hippo {
     private String name;
 
     @OneToMany(mappedBy = "hippo", fetch = FetchType.LAZY)
-    private List<Meal> meals;
+    private List<Meal> meals = new ArrayList<>();
 
+    public void addMeals(Meal newMeal)
+    {
+        meals.add(newMeal);
+    }
 }
